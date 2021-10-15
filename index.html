@@ -64,8 +64,30 @@
  <div class=qjm>请假码</div>
  <img class=tp src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWAQMAAAAGz+OhAAAABlBMVEX///9Sq1eCBojVAAAA3ElEQVRIic2VMRKFIAxEl7Gw9AgehaPh0TyKR7CkcFhJgt8ZvzUxDfBodjYbAF4qUWrV/az77Mf0sCYM3Ge5Gh1ZoB6KssTDn6UyZHyEIRzwZ61v5H8vuzPLcwrHuD8y3p1dJZY95703M5PIgpFbXCRKbgxiEmJlmOp1UK+cWLIgo7453ADT7MRMH5Loq4y3Zg/GPLUcyzMos+XGWoTFMk3UPVrd2W/O2zPoykTWlaFIikw31v4o2B9V8AFWF9WnXjmzNucPrzoz65vNeVyCK2t5ln+BXDDkb7GXOgEmKHQaOV4gxAAAAABJRU5ErkJggg==">
  <div>
- <span id=time>2021-10-15 22:11:00</span>
+ <span id=time>
+	 <div class="box"></div>
+    <script>
+        function getTime() {
+            var date = new Date();
+            var year = date.getFullYear(); //获取年份
+            var month = date.getMonth() + 1; //获取月份
+            var day = date.getDate(); //获取日期
+            var hour = date.getHours(); //获取小时
+            hour = hour < 10 ? '0' + hour : hour;
+            var minute = date.getMinutes(); // 获取分
+            minute = minute < 10 ? '0' + minute : minute;
+            var seconds = date.getSeconds(); //获取秒
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+            return year + '年' + month + '月' + day + '日&nbsp;' + hour + ':' + minute + ':' + seconds;
+        }
+ 
+        setInterval(function() {
+            document.querySelector('.box').innerHTML = getTime();
+        }, 1000)
+</span>
  <span id=times>8 1 9 9</span>
  </div>
  </div>
  </div>
+<script>
+</script>
